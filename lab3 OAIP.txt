@@ -1,0 +1,27 @@
+#include<iostream>
+#include<math.h>
+#include<conio.h>
+using namespace std;
+
+int main()
+{
+	int b, n, k, i, fact;
+	double x, a, h, s, y,d;
+	cout << "a,b,h,n:";
+	cin >> a >> b >> h >> n;
+	for (x = a; x <= b; x += h) {
+		for (s = 0, k = 0; k <= n; k++) {
+			for (fact = i = 1; i <= 2 * k; i++)
+				fact *= i;
+			s += pow(x, 2 * k) / fact;
+		}
+		y = (exp(x) + exp(-x)) / 2;
+		d = fabs(y - s);
+		cout << "x=" << x << endl;
+		cout << "\ts=" << s << endl;
+		cout << "\ty=" << y << endl;
+		cout << "\td=" << d << endl;
+	}
+	
+	return 0;
+}
